@@ -1,0 +1,76 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+
+\author{Brinkmann, Maximilian, 2319886, maximilian.brinkmann@haw-hamburg.de \\
+	Gkaitatzis, Andreas, 2320008, Gkaitatzis.A@web.de}
+
+\title{Design Dokument \\PR1 Praktikum WS2016}
+\date{ 	\begin{tabular}{|c|c|c|}
+		\hline 
+		Version & Datum & Anmerkung\\ 
+		\hline 
+		1.0 & 01.11.2016 & Erste Abgabe\\ 
+		\hline 
+\end{tabular} }
+
+
+\begin{document}
+	\maketitle
+	
+	\section*{Aufgabe 1:Logische Ausdrücke}
+	\subsection*{Design in Pseudocode}
+	\subsubsection*{a:}
+	(i $\neq$ 0) \& (j $\neq$ k) \& (k $\neq$ 0)\\
+	$\rightarrow$ Ausgabe
+	
+	\subsubsection*{b:}
+	(i $\ge$ 0) \& (i\%17 = 0)\\
+	$\rightarrow$ Ausgabe
+	
+	\subsubsection*{c:}
+	(j\%2 = 1) \& (j $<$ 40) \& (j $>$ 20)\\
+	$\rightarrow$ Ausgabe
+	
+	\subsubsection*{d:}
+	((k\%3 = 0) \& (k\%5 = 0)) or ((k\%5 = 0) \& (k\%7 = 0)) 
+	
+	or((k\%5 = 0) \& (k\%11 = 0))\\
+	$\rightarrow$ Ausgabe
+	 
+	\subsubsection*{e:}
+	(b = c) = d\\
+	$\rightarrow$ Ausgabe
+	
+	\newpage
+	\section*{Aufgabe 2: Messwert-Tabelle}
+	\subsection*{Desgin in Pseudocode}
+	\subsubsection*{Variabeln}
+	int posX\\
+	int posY\\
+	flout temp\\
+	anzZeilen\\
+	schleifenZaehler
+	
+	\subsubsection*{Aktivitäten}
+	- Ausgabe Kopfzeile und Trennstrich\\
+	$\rightarrow$ Formatierung Stellen: 11, 12, 15\\
+	$\rightarrow$ Gesamtlänge: 40
+	\\\\
+	- Solange schleifenZaehler $<$ anzZeilen
+	\\
+	$\rightarrow$ Benutzereingabe für posX, posY \& temp\\
+	$\rightarrow$ Ausgabe posX, posY \& temp\\
+	$\longrightarrow$ posX max. 11 Stellen lang, mit Vorzeichen und rechtsbündig\\
+	$\longrightarrow$ posY max. 12 Stellen lang, mit Vorzeichen und rechstbündig\\
+	$\longrightarrow$ temp max. 15 Stellen lang, 3 Nachkommastellen mit Vorzeichen\\
+	$\rightarrow$ schleifenZaehler plus 1
+	
+	\newpage
+	\section*{Aufgabe 3: Quadratische Gleichung}
+	\subsection*{Desgin in Pseudocode}
+	\subsubsection*{Variabeln}
+	
+	
+	
+\end{document}

@@ -1,5 +1,7 @@
 \documentclass[10pt,a4paper]{report}
-\usepackage[latin1]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 
 \author{Brinkmann, Maximilian, 2319886, maximilian.brinkmann@haw-hamburg.de \\
@@ -10,22 +12,25 @@
 		\hline 
 		Version & Datum & Anmerkung\\ 
 		\hline 
-		1.0 & 01.11.2016 & Erste Abgabe\\ 
+		1.0 & 01.11.2016 & Erster Entwurf\\ 
 		\hline 
-\end{tabular} }
+		1.1 & 10.11.2016 & Erste Korrektur\\ 
+		\hline
+		\end{tabular} 
+	}
 
 
 \begin{document}
 	\maketitle
 	
-	\section*{Aufgabe 1:Logische Ausdr�cke}
+	\section*{Aufgabe 1:Logische Ausdrücke}
 	\subsection*{Design in Pseudocode}
 	\subsubsection*{a:}
-	(i $\neq$ 0) \& (j $\neq$ k) \& (k $\neq$ 0)\\
+	(i $\neq$ 0) \& (j $\neq$ 0) \& (k $\neq$ 0)\\
 	$\rightarrow$ Ausgabe
 	
 	\subsubsection*{b:}
-	(i $\ge$ 0) \& (i\%17 = 0)\\
+	(i $<$ 0) \& (i\%17 = 0)\\
 	$\rightarrow$ Ausgabe
 	
 	\subsubsection*{c:}
@@ -33,44 +38,82 @@
 	$\rightarrow$ Ausgabe
 	
 	\subsubsection*{d:}
-	((k\%3 = 0) \& (k\%5 = 0)) or ((k\%5 = 0) \& (k\%7 = 0)) 
-	
-	or((k\%5 = 0) \& (k\%11 = 0))\\
+	((k\%5 = 0) \& ((k\%7 = 0) oder(k\%7 = 0) oder (k\%11 = 0))\\
 	$\rightarrow$ Ausgabe
 	 
 	\subsubsection*{e:}
-	(b = c) = d\\
+	(b = c) \& (c = d)\\
 	$\rightarrow$ Ausgabe
+	\\\\
+	Jeweiligen Bedingungen für eine If-Unterscheidung.
 	
 	\newpage
 	\section*{Aufgabe 2: Messwert-Tabelle}
 	\subsection*{Desgin in Pseudocode}
 	\subsubsection*{Variabeln}
-	int posX\\
-	int posY\\
-	flout temp\\
-	anzZeilen\\
-	schleifenZaehler
+	int posX1\\
+	int posY1\\
+	double temp1\\\\
+	int posX2\\
+	int posY2\\
+	double temp2\\\\
+	int posX3\\
+	int posY3\\
+	double temp3\\
 	
-	\subsubsection*{Aktivit�ten}
-	- Ausgabe Kopfzeile und Trennstrich\\
-	$\rightarrow$ Formatierung Stellen: 11, 12, 15\\
-	$\rightarrow$ Gesamtl�nge: 40
-	\\\\
-	- Solange schleifenZaehler $<$ anzZeilen
+	\subsubsection*{Aktivitäten}
+	- Benutzereingabe für posX1, posY1 \& temp1\\
+	- Benutzereingabe für posX2, posY2 \& temp2\\
+	- Benutzereingabe für posX3, posY3 \& temp3\\
+	$\rightarrow$ jeweilig mit Überprüfung der Vorraussetzungen:\\
+	$\longrightarrow$ x,y im Bereich -1024 bis 1024\\
+	$\longrightarrow$ Temperatur -40 bis 85\\
 	\\
-	$\rightarrow$ Benutzereingabe f�r posX, posY \& temp\\
+	- Ausgabe Kopfzeile und Trennstrich\\
+	\\
 	$\rightarrow$ Ausgabe posX, posY \& temp\\
-	$\longrightarrow$ posX max. 11 Stellen lang, mit Vorzeichen und rechtsb�ndig\\
-	$\longrightarrow$ posY max. 12 Stellen lang, mit Vorzeichen und rechstb�ndig\\
-	$\longrightarrow$ temp max. 15 Stellen lang, 3 Nachkommastellen mit Vorzeichen\\
-	$\rightarrow$ schleifenZaehler plus 1
+	$\rightarrow$ jeweils alle drei Werte ($posX_{1,2,3}$ ;  $posY_{1,2,3}$ ; $temp_{1,2,3}$
+	\\\\
+	$\longrightarrow$ posX max. 10 Stellen lang, mit Vorzeichen und rechtsbündig\\
+	$\longrightarrow$ posY max. 10 Stellen lang, mit Vorzeichen und rechstbündig\\
+	$\longrightarrow$ temp max. 10 Stellen lang, 3 Nachkommastellen mit Vorzeichen\\
 	
 	\newpage
 	\section*{Aufgabe 3: Quadratische Gleichung}
 	\subsection*{Desgin in Pseudocode}
 	\subsubsection*{Variabeln}
+	double a\\
+	double b\\
+	double c\\
+	double x1\\
+	double x2
 	
+	\subsubsection*{Aktivitäten}
+	Fallunterscheidung zwischen keiner, einer und zwei Lösungen:\\
+	Keine:$b^2 - 4ac < 0$\\
+	Eine: $a = 0$ \& $b\neq0$ oder   $\sqrt{b^2 - 4ac} = 0$\\
+	Zwei: alle weitere Fälle\\
+	\\
+	Berechnung:\\
+	Bei Keiner Lösung: keine Berechnung.\\
+	Bei einer Lösung: $ \dfrac{-c}{b} $ bzw. $\dfrac{-b}{2a} $\\
+	Bei zwei Lösungen: x1: $\dfrac{-b + \sqrt{b^2 - 4ac}}{2a} $ und x2: $ \dfrac{-b - \sqrt{b^2 - 4ac}}{2a} $.\\
+	\\
+	$\longrightarrow$Ausgabe nach der Berechnung.
+	
+	\section*{Aufgabe 4: Zahlenraten}
+	\subsection*{Desgin in Pseudcode}
+	\subsubsection*{Variabeln}
+	int zufallsZahl\\
+	int benutzerZahl\\
+	
+	\subsubsection*{Aktivitäten}
+	- zufallsZahl mit srand und time erzeugen $\rightarrow$ \%10+1\\
+	- Eingabe von benutzerZahl\\
+	- Abgleichen beider Variablen, Ausgabe ob richtig, zu hoch oder zu niedrig $\rightarrow$ Angabe der Differenz\\
+	\\
+	Weiterführend: \\
+	Nutzereingabe, sowie Abgleich mit Ausgabe, in Do-While Schleife; solange wiederholen bis zufallsZahl = nutzerZahl.
 	
 	
 \end{document}
